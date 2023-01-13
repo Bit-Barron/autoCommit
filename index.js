@@ -1,22 +1,19 @@
-const { exec } = require('child_process');
+const exec = require('child_process');
 
-const message = 'Hello World';
-
+const commitMessage = 'Automatic commit';
 const gitUrl = 'https://github.com/Bit-Barron/autoCommit';
+const time = '24:18';
 
-const time = '12:00';
+const currentTime = new Date();
+const scheduledTime = new Date();
+scheduledTime.setHours(parseInt(time.split(':')[0]));
+scheduledTime.setMinutes(parseInt(time.split(':')[1]));
 
-const currTime = new Date();
-const time = new Date();
-
-time.setHours(parseInt(time.split(':')[0]));
-time.setMinutes(parseInt(time.split(':')[1]));
-
-if (currTime > time) {
-  time.setData(time.getDate() + 1);
+if (currentTime > scheduledTime) {
+  scheduledTime.setDate(scheduledTime.getDate() + 1);
 }
 
-const timeToWait = time.getTime() - currTime.getTime();
+const timeUntilCommit = scheduledTime.getTime() - currentTime.getTime();
 
 setTimeout(() => {
   exec(
@@ -26,7 +23,7 @@ setTimeout(() => {
         console.error(`Error: ${error}`);
         return;
       }
-      console.log('succes.');
+      console.log('Commit and push successful.');
     }
   );
 }, timeUntilCommit);
