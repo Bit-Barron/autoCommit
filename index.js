@@ -2,7 +2,7 @@ const exec = require('child_process').exec;
 
 const commitMessage = 'Automatic commit';
 const gitUrl = 'https://github.com/Bit-Barron/autoCommit';
-const time = '00:33';
+const time = '00:37';
 
 const currentTime = new Date();
 const scheduledTime = new Date();
@@ -12,6 +12,7 @@ scheduledTime.setMinutes(parseInt(time.split(':')[1]));
 if (currentTime > scheduledTime) {
   scheduledTime.setDate(scheduledTime.getDate() + 1);
 }
+console.log(`sadf`);
 
 const timeUntilCommit = scheduledTime.getTime() - currentTime.getTime();
 
