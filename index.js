@@ -2,7 +2,7 @@ const exec = require('child_process').exec;
 
 const commitMessage = 'Automatic commit';
 const gitUrl = 'https://github.com/Bit-Barron/autoCommit';
-const time = '00:37';
+const time = '00:40';
 
 const currentTime = new Date();
 const scheduledTime = new Date();
@@ -18,7 +18,7 @@ const timeUntilCommit = scheduledTime.getTime() - currentTime.getTime();
 
 setTimeout(() => {
   exec(
-    `git add . && git commit -m "${commitMessage}" && git push ${gitUrl}`,
+    `git add . && git commit -m "${commitMessage}" && git push ${gitUrl} --force`,
     (error) => {
       if (error) {
         console.error(`Error: ${error}`);
