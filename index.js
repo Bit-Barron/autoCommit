@@ -2,7 +2,7 @@ const exec = require('child_process').exec;
 
 const commitMessage = 'Automatic commit';
 const gitUrl = 'https://github.com/Bit-Barron/autoCommit';
-const time = '00:28';
+const time = '00:29';
 
 const currentTime = new Date();
 const scheduledTime = new Date();
