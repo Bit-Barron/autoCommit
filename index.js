@@ -2,7 +2,7 @@ const exec = require('child_process').exec;
 
 const commitMessage = 'Automatic commit';
 const gitUrl = 'https://github.com/Bit-Barron/autoCommit';
-const time = '00:46';
+const time = '00:49';
 
 const currentTime = new Date();
 const scheduledTime = new Date();
@@ -29,13 +29,3 @@ setTimeout(() => {
   );
 }, timeUntilCommit);
 
-setTimeout(() => {
-  exec(`node index.js`, (error) => {
-    if (error) {
-      console.error(`Error: ${error}`);
-      return;
-    } else {
-      console.log('Reboot successful.');
-    }
-  });
-});
