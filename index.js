@@ -12,7 +12,6 @@ scheduledTime.setMinutes(parseInt(time.split(':')[1]));
 if (currentTime > scheduledTime) {
   scheduledTime.setDate(scheduledTime.getDate() + 1);
 }
-console.log(`sadf`);
 
 const timeUntilCommit = scheduledTime.getTime() - currentTime.getTime();
 
